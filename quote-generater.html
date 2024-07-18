@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> Random Quote Generater</title>
+        <link rel="stylesheet" href="quote-style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="box">
+                <q id="quote"> Quotes</q>
+                <p id="quoteauthor"> Author</p>
+            </div>
+            <button id="quoteBtn">Generate Quotes</button>
+        </div>
+
+
+    <script>
+        
+let quote = document.getElementById('quote');
+let quoteauthor = document.getElementById('quoteauthor');
+let quoteBtn = document.getElementById('quoteBtn');
+
+let quotes = [
+    {
+        name ='Oscar wilde',
+        quoteses = 'To live is the rarest thing in the world. Most people exist, that is all.'
+    },
+    {
+        name = 'Emily Dickinson',
+        quoteses = 'That it will never come again is what makes life so sweet.'
+    },
+    {
+        name = 'George Eliot',
+        quoteses = 'It is never late to be what you might have been.'
+    },
+    {
+        name = 'William Shakespeare',
+        quoteses = 'All the world is a stage, and all the men and women merely players.'
+    },
+    {
+        name = 'Alice Walker',
+        quoteses = 'The most common way people give up their power is by be thinking they do not have any.'
+    }
+];
+
+
+quoteBtn.addEventListener('click',randomQuote);
+
+function randomQuote(){
+    let number= Math.floor(Math.random()*quotes.length);
+    quote.innerText = quotes[number].quoteses;
+    quoteauthor.innerText = quotes[number].name;
+    
+}
+    </script>
+    </body>
+</html>
